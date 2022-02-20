@@ -1,5 +1,5 @@
 class Product
-  TAX_EXCEMPT_PRODUCT = %w(book chocolate pill)
+  TAX_EXCEMPT_PRODUCT = %i(book food medicine)
 
   attr_accessor :name, :price
   attr_reader :category
@@ -15,7 +15,7 @@ class Product
   end
 
   def exempted?
-    [:food, :book, :medicine].include?(category)
+    TAX_EXCEMPT_PRODUCT.include?(category)
   end
 
   private
@@ -24,5 +24,6 @@ class Product
     return :book if @name.downcase.include?('book')
     return :food if @name.downcase.include?('chocolate')
     return :medicine if @name.downcase.include?('pill')
+    :other
   end
 end
