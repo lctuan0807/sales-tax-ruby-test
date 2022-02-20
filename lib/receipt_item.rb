@@ -1,21 +1,21 @@
 require_relative 'product'
 require_relative 'tax_calculator'
 
-class OrderItem
+class ReceiptItem
   attr_accessor :sales_taxes, :total
 
   def initialize(product:, quantity:)
     @product = product
     @quantity = quantity
     @sales_taxes = total_sales_taxes
-    @total = (@quantity * @product.price) + @sales_taxes
+    @total = (@quantity * @product.price + @sales_taxes).to_f.round(2)
   end
 
   def calculate_order_item
     [
       @quantity,
       @product.name,
-      @total.to_f.round(2)
+      @total
     ]
   end
 

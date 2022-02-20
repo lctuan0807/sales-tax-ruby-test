@@ -14,7 +14,7 @@ class Product
     @name.downcase.include?('imported')
   end
 
-  def exempted?
+  def tax_exempted?
     TAX_EXCEMPT_PRODUCT.include?(category)
   end
 

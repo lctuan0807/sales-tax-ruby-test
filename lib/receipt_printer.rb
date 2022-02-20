@@ -12,11 +12,11 @@ class ReceiptPrinter
   private
 
   def print_items
-    @receipt.orders_with_tax.each { |owt| puts owt.join(', ') }
+    @receipt.items_with_tax.each { |owt| puts owt.join(', ') }
   end
 
   def print_sales_taxes
-    puts "\nSales Taxes: #{format_money(@receipt.sales_taxes)}"
+    puts "\nSales Taxes: #{format_money(@receipt.total_sales_taxes)}"
   end
 
   def print_total
