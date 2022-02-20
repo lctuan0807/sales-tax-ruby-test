@@ -1,47 +1,27 @@
-require_relative 'order'
+require_relative 'order_item'
 
 class Receipt
-  attr_accessor :orders_with_tax, :sales_taxes, :total_price
+  attr_reader :orders_with_tax, :sales_taxes, :total_cost
 
-  def initialize(orders = [])
-    @orders = orders
+  def initialize(items: [])
+    @items = items
     @orders_with_tax = []
-    @total_price = 0
+    @total_cost = 0
     @sales_taxes = 0
   end
 
+  def add_item(item)
+    @items << item
+  end
+
   def calculate
-    @orders.each do |order|
-      order = Order.new(order: order)
-      order_with_tax = order.order_with_tax
-
-      @orders_with_tax.push(order_with_tax)
-      @total_price += order.total
-      @sales_taxes += order.sales_taxes
+    @items.each do |item|
+      product = Product.new(name: item[1], price: item[2].to_f)
+      order_item = OrderItem.new(product: product, quantity: item[0].to_i)
+    
+      @orders_with_tax.push(order_item.calculate_order_item)
+      @total_cost += order_item.total
+      @sales_taxes += order_item.sales_taxes
     end
-  end
-
-  def print
-    print_items
-    print_sales_taxes
-    print_total
-  end
-
-  private
-
-  def print_items
-    orders_with_tax.each { |owt| puts owt.join(', ') }
-  end
-
-  def print_sales_taxes
-    puts "\nSales Taxes: #{format_money(@sales_taxes)}"
-  end
-
-  def print_total
-    puts "Total: #{format_money(@total_price)}"
-  end
-
-  def format_money(money)
-    sprintf('%.2f', money.to_f)
   end
 end

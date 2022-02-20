@@ -1,32 +1,28 @@
 class Product
-  FREE_TAX_PRODUCTS = %w(book chocolate pill)
-  BASIC_SALES_TAX = 0.1
-  IMPORT_DUTY_SALES_TAX = 0.05
+  TAX_EXCEMPT_PRODUCT = %w(book chocolate pill)
 
   attr_accessor :name, :price
+  attr_reader :category
 
   def initialize(name:, price:)
     @name = name
     @price = price
-  end
-
-  def tax_rate
-    tax = base_tax_rate
-    tax += IMPORT_DUTY_SALES_TAX if imported?
-    tax
-  end
-
-  private
-
-  def base_tax_rate
-    free_tax? ? 0 : BASIC_SALES_TAX
+    @category = build_category
   end
 
   def imported?
     @name.downcase.include?('imported')
   end
 
-  def free_tax?
-    FREE_TAX_PRODUCTS.any? { |free_tax_product| @name.downcase.include?(free_tax_product) }
+  def exempted?
+    [:food, :book, :medicine].include?(category)
+  end
+
+  private
+
+  def build_category
+    return :book if @name.downcase.include?('book')
+    return :food if @name.downcase.include?('chocolate')
+    return :medicine if @name.downcase.include?('pill')
   end
 end
