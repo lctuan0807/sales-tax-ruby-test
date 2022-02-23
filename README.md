@@ -16,20 +16,20 @@
   Proper object orientated design is important. Each row in the input represents a line item of the receipt.
 
 ## Input
-  ## Input 1
+  ### Input 1
   ```
   Quantity, Product, Price
   1, book, 12.49
   1, music cd, 14.99
   1, chocolate bar, 0.85
   ```
-  ## Input 2
+  ### Input 2
   ```
   Quantity, Product, Price
   1, imported box of chocolates, 10.00
   1, imported bottle of perfume, 47.50
   ```
-  ## Input 3
+  ### Input 3
   ```Quantity, Product, Price
   1, imported bottle of perfume, 27.99 1, bottle of perfume, 18.99
   1, packet of headache pills, 9.75
