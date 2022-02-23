@@ -1,21 +1,18 @@
-class Product
-  TAX_EXCEMPT_PRODUCT = %i(book food medicine)
+require_relative '../services/tax_calculator'
 
-  attr_accessor :name, :price
-  attr_reader :category
+class Product
+  attr_accessor :name, :price, :category, :sales_tax, :is_imported
 
   def initialize(name:, price:)
     @name = name
     @price = price
     @category = build_category
+    @is_imported = imported?
+    @sales_tax = TaxCalculator.new(item: self).calculate
   end
 
   def imported?
     @name.downcase.include?('imported')
-  end
-
-  def tax_exempted?
-    TAX_EXCEMPT_PRODUCT.include?(category)
   end
 
   private
@@ -25,5 +22,5 @@ class Product
     return :food if @name.downcase.include?('chocolate')
     return :medicine if @name.downcase.include?('pill')
     :other
-  end
+  end 
 end

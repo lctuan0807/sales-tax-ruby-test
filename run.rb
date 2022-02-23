@@ -1,5 +1,6 @@
-require_relative './lib/application'
+require_relative './lib/application.rb'
 
-input_file = ARGV.first
-application = Application.new(file: input_file)
-application.execute
+Dir.glob(File.join("input_data", "*.csv")).sort.each do |file|
+  application = Application.new(file: file)
+  application.execute
+end
