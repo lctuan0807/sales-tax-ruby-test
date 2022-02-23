@@ -17,44 +17,27 @@
 
 ## Input
   ## Input 1
-  Quantity, Product, Price 1, book, 12.49
+  ```
+  Quantity, Product, Price
+  1, book, 12.49
   1, music cd, 14.99
   1, chocolate bar, 0.85
+  ```
   ## Input 2
+  ```
   Quantity, Product, Price
-  1, imported box of chocolates, 10.00 1, imported bottle of perfume, 47.50
+  1, imported box of chocolates, 10.00
+  1, imported bottle of perfume, 47.50
+  ```
   ## Input 3
-  Quantity, Product, Price
+  ```Quantity, Product, Price
   1, imported bottle of perfume, 27.99 1, bottle of perfume, 18.99
   1, packet of headache pills, 9.75
   1, box of imported chocolates, 11.25
+  ```
 
 ## Output
-```
-  ========== Receipt ==========
-  1, Book, 12.49
-  1, Music CD, 16.49
-  1, Chocolate Bar, 0.85
-
-  Sales Taxes: 1.5
-  Total: 29.83
-
-  ========== Receipt ==========
-  1, Imported Box of Chocolates, 10.5
-  1, Imported Bottle of Perfume, 54.65
-
-  Sales Taxes: 7.65
-  Total: 65.15
-
-  ========== Receipt ==========
-  1, Imported Bottle of Perfume, 32.19
-  1, Bottle of Perfume, 20.89
-  1, Packet of Headache Pills, 9.75
-  1, Box of Imported Chocolates, 11.85
-
-  Sales Taxes: 6.7
-  Total: 74.68
-```
+  The output results will be exported to `results` folder with format name like `output_input*.csv`
 
 ## Tests
   To run the specs:
