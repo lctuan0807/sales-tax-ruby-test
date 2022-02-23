@@ -30,8 +30,10 @@
   1, imported bottle of perfume, 47.50
   ```
   ### Input 3
-  ```Quantity, Product, Price
-  1, imported bottle of perfume, 27.99 1, bottle of perfume, 18.99
+  ```
+  Quantity, Product, Price
+  1, imported bottle of perfume, 27.99
+  1, bottle of perfume, 18.99
   1, packet of headache pills, 9.75
   1, box of imported chocolates, 11.25
   ```
