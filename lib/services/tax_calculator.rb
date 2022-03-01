@@ -1,18 +1,21 @@
 require 'bigdecimal'
+require_relative '../helpers/utility'
 
 class TaxCalculator
-  TAX_EXCEMPT = %i(book food medicine)
+  EXCEMPTED_TAX_ITEM = %i(book food medicine)
   NONE_TAX = BigDecimal('0.0')
   IMPORTED_TAX = BigDecimal('0.05')
   BASIC_TAX = BigDecimal('0.1')
   ROUNDING_TAX_RULE = 1 / 0.05
+
+  include Utility
 
   def initialize(item:)
     @item = item
   end
 
   def calculate
-    (item_tax * ROUNDING_TAX_RULE).ceil / ROUNDING_TAX_RULE
+    round_nearest(item_tax, ROUNDING_TAX_RULE)
   end
 
   private
@@ -23,11 +26,11 @@ class TaxCalculator
 
   def rate_tax
     rate_tax = base_tax
-    rate_tax += IMPORTED_TAX if @item.is_imported
+    rate_tax += IMPORTED_TAX if @item.imported?
     rate_tax
   end
 
   def base_tax
-    TAX_EXCEMPT.include?(@item.category) ? NONE_TAX : BASIC_TAX
+    EXCEMPTED_TAX_ITEM.include?(@item.category) ? NONE_TAX : BASIC_TAX
   end
 end

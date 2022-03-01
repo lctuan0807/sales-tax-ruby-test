@@ -7,13 +7,14 @@ RSpec.describe Product do
   describe "#new" do
     it "takes two parameters and returns a Product object" do
       expect(product).to be_an_instance_of Product
+      expect(product.category).to eq :other
     end
   end
 
-  describe '.is_imported' do
+  describe '#imported?' do
     context 'when not imported product' do
       it 'return false' do
-        expect(product.is_imported).to be_falsey
+        expect(product.imported?).to be_falsey
       end
     end
 
@@ -21,7 +22,7 @@ RSpec.describe Product do
       let(:product_name) { 'Imported Music CD' }
 
       it 'return true' do
-        expect(product.is_imported).to be_truthy
+        expect(product.imported?).to be_truthy
       end
     end
   end

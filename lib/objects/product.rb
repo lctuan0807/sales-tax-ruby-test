@@ -1,14 +1,11 @@
-require_relative '../services/tax_calculator'
-
 class Product
-  attr_accessor :name, :price, :category, :sales_tax, :is_imported
+  attr_accessor :name, :price
+  attr_reader :category
 
   def initialize(name:, price:)
     @name = name
-    @price = price
+    @price = price.to_f
     @category = build_category
-    @is_imported = imported?
-    @sales_tax = TaxCalculator.new(item: self).calculate
   end
 
   def imported?

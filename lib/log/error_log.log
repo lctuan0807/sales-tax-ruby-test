@@ -1,0 +1,12 @@
+E, [2022-03-01T11:22:50.787362 #72725] ERROR -- : undefined method `items' for []:Array
+E, [2022-03-01T11:22:50.789180 #72725] ERROR -- : undefined method `items' for []:Array
+E, [2022-03-01T11:22:50.790406 #72725] ERROR -- : undefined method `items' for []:Array
+E, [2022-03-01T11:23:36.390693 #72874] ERROR -- : undefined method `items' for []:Array
+E, [2022-03-01T11:23:36.392546 #72874] ERROR -- : undefined method `items' for []:Array
+E, [2022-03-01T11:23:36.393715 #72874] ERROR -- : undefined method `items' for []:Array
+E, [2022-03-01T11:23:51.124710 #73014] ERROR -- : undefined method `items' for []:Array
+E, [2022-03-01T11:23:51.126115 #73014] ERROR -- : undefined method `items' for []:Array
+E, [2022-03-01T11:23:51.127269 #73014] ERROR -- : undefined method `items' for []:Array
+E, [2022-03-01T11:25:05.687859 #73641] ERROR -- : undefined method `empty?' for #<Receipt:0x00007fe9e71df488>
+E, [2022-03-01T11:25:05.688962 #73641] ERROR -- : undefined method `empty?' for #<Receipt:0x00007fe9e71c7310>
+E, [2022-03-01T11:25:05.689747 #73641] ERROR -- : undefined method `empty?' for #<Receipt:0x00007fe9e71b77d0>
