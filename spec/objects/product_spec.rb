@@ -9,6 +9,24 @@ RSpec.describe Product do
       expect(product).to be_an_instance_of Product
       expect(product.category).to eq :other
     end
+
+    context 'create book' do
+      let(:product_name) { 'book' }
+      
+      it { expect(product.category).to eq :book }
+    end
+
+    context 'create food' do
+      let(:product_name) { 'chocolate bar' }
+      
+      it { expect(product.category).to eq :food }
+    end
+
+    context 'create medicine' do
+      let(:product_name) { 'pills' }
+      
+      it { expect(product.category).to eq :medicine }
+    end
   end
 
   describe '#imported?' do

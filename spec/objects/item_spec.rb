@@ -24,12 +24,4 @@ RSpec.describe Item do
       expect(line_item.total_cost).to eq BigDecimal('16.49')
     end
   end
-
-  # describe '#display' do
-  #   let(:expected_string) { "1, music cd, 16.49" }
-
-  #   it 'return formatted string' do
-  #     expect(line_item.display).to eq expected_string
-  #   end
-  # end
 end

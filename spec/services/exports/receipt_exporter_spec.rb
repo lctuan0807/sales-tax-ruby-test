@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require_relative '../../spec_helper'
 
 RSpec.describe Exports::ReceiptExporter do
   subject { described_class.new(output_path: output_path) }

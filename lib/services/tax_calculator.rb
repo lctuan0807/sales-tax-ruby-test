@@ -8,7 +8,7 @@ class TaxCalculator
   BASIC_TAX = BigDecimal('0.1')
   ROUNDING_TAX_RULE = 1 / 0.05
 
-  include Utility
+  include Helpers::Utility
 
   def initialize(item:)
     @item = item

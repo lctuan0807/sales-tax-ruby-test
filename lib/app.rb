@@ -7,15 +7,15 @@ require_relative './services/exports/receipt_exporter'
 file_pairs = [
   {
     input: 'input_data/input1.csv',
-    output: 'lib/results/output1.csv',
+    output: 'results/output1.csv',
   },
   {
     input: 'input_data/input2.csv',
-    output: 'lib/results/output2.csv',
+    output: 'results/output2.csv',
   },
   {
     input: 'input_data/input3.csv',
-    output: 'lib/results/output3.csv',
+    output: 'results/output3.csv',
   }
 ]
 

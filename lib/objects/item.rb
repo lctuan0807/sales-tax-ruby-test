@@ -16,10 +16,6 @@ class Item
     (@quantity * @product.price) + tax
   end
 
-  def to_csv
-    
-  end
-
   private
 
   def product_sales_tax

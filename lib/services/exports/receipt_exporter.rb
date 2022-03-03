@@ -3,7 +3,7 @@ require_relative '../../helpers/utility'
 
 module Exports
   class ReceiptExporter < BaseExporter
-    include Utility
+    include Helpers::Utility
 
     attr_accessor :receipt
 
@@ -13,7 +13,7 @@ module Exports
       ['Quantity', 'Product', 'Price']
     end
 
-    def rows_exporting
+    def rows_extracting
       unless receipt.nil?
         receipt.items.each { |item| @csv << [item.quantity, item.product.name, format_money(item.total_cost)] }
         @csv << ['', '']

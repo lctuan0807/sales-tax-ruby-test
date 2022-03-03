@@ -1,9 +1,9 @@
 require 'csv'
-require_relative '../error_logger'
+require_relative '../../helpers/error_logger'
 
 module Exports
   class BaseExporter
-    include ErrorLogger
+    include Helpers::ErrorLogger
 
     def initialize(output_path:)
       @output_path = output_path
@@ -13,7 +13,7 @@ module Exports
       CSV.open(@output_path, "wb") do |csv|
         @csv = csv
         @csv << default_header
-        rows_exporting
+        rows_extracting
       end
       @output_path
     rescue StandardError => e
@@ -27,7 +27,7 @@ module Exports
       'default_header must be implemented in child class'
     end
 
-    def rows_exporting
+    def rows_extracting
       'rows_exporting must be implemented in child class'
     end
   end
