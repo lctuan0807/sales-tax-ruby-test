@@ -2,7 +2,6 @@ require 'bigdecimal'
 require_relative '../helpers/utility'
 
 class TaxCalculator
-  EXCEMPTED_TAX_ITEM = %i(book food medicine)
   NONE_TAX = BigDecimal('0.0')
   IMPORTED_TAX = BigDecimal('0.05')
   BASIC_TAX = BigDecimal('0.1')
@@ -31,6 +30,6 @@ class TaxCalculator
   end
 
   def base_tax
-    EXCEMPTED_TAX_ITEM.include?(@item.category) ? NONE_TAX : BASIC_TAX
+    @item.exempt? ? NONE_TAX : BASIC_TAX
   end
 end
