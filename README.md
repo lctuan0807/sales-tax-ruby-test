@@ -3,7 +3,7 @@
 ## Execute
   Run the following command to export all files from `input_data` folder to `results` folder
   ```
-    $ ruby lib/app.rb
+    $ ruby app.rb
   ```
 
 ## Problem

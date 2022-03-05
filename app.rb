@@ -1,8 +1,8 @@
 require 'csv'
-require_relative './objects/receipt.rb'
-require_relative './objects/item'
-require_relative './objects/product'
-require_relative './services/exports/receipt_exporter'
+require_relative './lib/model/receipt.rb'
+require_relative './lib/model/item'
+require_relative './lib/model/product'
+require_relative './lib/services/exports/receipt_exporter'
 
 file_pairs = [
   {
