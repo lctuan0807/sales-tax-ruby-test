@@ -26,18 +26,18 @@ RSpec.describe Product do
     end
   end
 
-  describe '#imported?' do
-    context 'when not exempt product' do
+  describe '#exempt_tax?' do
+    context 'when not exempt tax product' do
       it 'return false' do
-        expect(product.exempt?).to be_falsey
+        expect(product.exempt_tax?).to be_falsey
       end
     end
 
-    context 'when exempt product' do
+    context 'when exempt tax product' do
       let(:product_name) { 'chocolates bar' }
 
       it 'return true' do
-        expect(product.exempt?).to be_truthy
+        expect(product.exempt_tax?).to be_truthy
       end
     end
   end

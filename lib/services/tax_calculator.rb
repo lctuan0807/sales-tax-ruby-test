@@ -30,6 +30,6 @@ class TaxCalculator
   end
 
   def base_tax
-    @item.exempt? ? NONE_TAX : BASIC_TAX
+    @item.exempt_tax? ? NONE_TAX : BASIC_TAX
   end
 end

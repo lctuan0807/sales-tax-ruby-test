@@ -13,7 +13,7 @@ class Product
     @name.downcase.include?('imported')
   end
 
-  def exempt?
+  def exempt_tax?
     EXCEMPT_TAX_ITEMS.any? { |excemp_item| @name.downcase.include?(excemp_item) }
   end
 end
