@@ -19,6 +19,8 @@ files = [
   }
 ]
 
+puts "--------- Exporting Receipt -----------"
+
 files.each do |file|
   receipt = Receipt.new
   input_file = File.read(file[:input])
@@ -32,3 +34,5 @@ files.each do |file|
   receipt_exporter.receipt = receipt
   receipt_exporter.perform
 end
+
+puts "--------- Exported Receipt -----------"

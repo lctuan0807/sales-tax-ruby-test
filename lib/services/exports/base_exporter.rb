@@ -24,11 +24,11 @@ module Exports
     private
 
     def default_header
-      'default_header must be implemented in child class'
+      raise NotImplementedError, 'default_header must be implemented in child class'
     end
 
     def rows_extracting
-      'rows_exporting must be implemented in child class'
+      raise NotImplementedError, 'rows_exporting must be implemented in child class'
     end
   end
 end
